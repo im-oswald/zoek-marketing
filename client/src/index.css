@@ -1,12 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --brand-purple-primary: #6753a0;
+  --brand-purple-secondary: #9b51e0;
+  --brand-purple-tertiary: #bb6bd9;
+  --brand-orange-primary: #f15a2e;
+  --brand-orange-secondary: #f2994a;
+  --brand-off-white: #e5e1d3;
+  --brand-yellow: #f2c94c;
+  --brand-green-primary: #89caa9;
+  --brand-green-secondary: #27ae60;
+  --brand-blue-primary: #2f80ed;
+  --brand-blue-secondary: #56ccf2;
+  --brand-black: #333333;
+  --brand-red: #ed5757;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --brand-background: #f3f3f3;
+}
+
+@font-face {
+  font-family: 'Newake';
+  src: url('/fonts/NewakeFont.otf');
+  font-family: 'CenturyGothic';
+  src: url('/fonts/CenturyGothic.ttf');
 }
