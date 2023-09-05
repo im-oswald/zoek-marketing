@@ -1,30 +1,27 @@
-# frontend
+# React + TypeScript + Vite
 
-> Frontend for laravel-vue crash course
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Build Setup
+Currently, two official plugins are available:
 
-``` bash
-# install dependencies
-npm install
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Expanding the ESLint configuration
 
-# build for production with minification
-npm run build
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-# build for production and view the bundle analyzer report
-npm run build --report
+- Configure the top-level `parserOptions` property like this:
 
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
