@@ -1,0 +1,69 @@
+/* src/components/BudgetCalculatorView.css */
+
+/* Styling for the BudgetCalculatorView component */
+.budget-calculator-view {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.budget-calculator-view h2 {
+  font-size: 20px;
+  color: #333; /* Dark text color */
+  margin: 10px 0;
+}
+
+.budget-calculator-view input[type='number'],
+.budget-calculator-view input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  transition: all 0.3s ease-in-out;
+}
+
+.budget-calculator-view input[type='number']:hover,
+.budget-calculator-view input[type='text']:hover {
+  background-color: #fff; /* White background on hover */
+  border-color: #0056b3; /* Darker blue border on hover */
+}
+
+.budget-calculator-view input[type='number']:focus,
+.budget-calculator-view input[type='text']:focus {
+  outline: none;
+  background-color: #fff; /* White background on focus */
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.7); /* Light blue shadow on focus */
+}
+
+.budget-summary {
+  margin-top: 20px;
+}
+
+/* Styling for the "Add Expense" button */
+.budget-calculator-view button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+/* "Add Expense" button hover effect */
+.budget-calculator-view button:hover {
+  background-color: #0056b3; /* Darker blue background on hover */
+  transform: translateY(-3px); /* Move the button up on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* "Add Expense" button focus effect */
+.budget-calculator-view button:focus {
+  outline: none;
+}

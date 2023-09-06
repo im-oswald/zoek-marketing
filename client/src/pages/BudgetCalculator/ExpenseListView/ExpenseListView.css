@@ -1,0 +1,50 @@
+/* src/components/ExpenseListView.css */
+
+/* Styling for the ExpenseListView component */
+.expense-list-view {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  border: 5px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.expense-list-view h2 {
+  font-size: 20px;
+  color: #333; /* Dark text color */
+  margin: 10px 0;
+}
+
+.expense-list-view ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.expense-list-view li {
+  font-size: 16px;
+  margin-bottom: 80px;
+}
+
+/* Styling for the "Edit" and "Delete" buttons */
+.expense-list-view button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+/* Button hover effect */
+.expense-list-view button:hover {
+  background-color: #0056b3; /* Darker blue background on hover */
+  transform: translateY(-2px); /* Move the button up on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Button focus effect */
+.expense-list-view button:focus {
+  outline: none;
+}
