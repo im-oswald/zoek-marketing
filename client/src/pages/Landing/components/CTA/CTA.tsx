@@ -6,13 +6,15 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'react-toastify';
 
+const phoneRegex = new RegExp(
+  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
+);
+
 const formSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   email: z.string().email('Invalid email').min(1, 'Email is required'),
-  password: z
-    .string()
-    .min(1, 'Password is required')
-    .min(8, 'Password must have more than 8 characters')
+  phone: z
+    .string().regex(phoneRegex, 'Invalid Number!'),
 });
 
 type FormSchemaType = z.infer<typeof formSchema>;
@@ -25,6 +27,7 @@ export default function CTA() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { isSubmitting, errors }
   } = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema)
@@ -32,7 +35,7 @@ export default function CTA() {
 
   const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/v1/lead/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -57,6 +60,7 @@ export default function CTA() {
         progress: undefined,
         theme: 'light'
       });
+      reset();
     } catch (error) {
       console.error('Error:', error);
       toast.error(
@@ -135,15 +139,15 @@ export default function CTA() {
                   )}
                 </div>
                 <div className="w-full min-w-0 flex-1 px-4 sm:px-0">
-                  <label htmlFor="password" className="sr-only"></label>
+                  <label htmlFor="phone" className="sr-only"></label>
                   <input
-                    {...register('password', { required: true })}
-                    placeholder="Enter your password"
+                    {...register('phone', { required: true })}
+                    placeholder="Enter your phone"
                     className="block w-full rounded-md border-transparent p-4 text-base text-black caret-indigo-600 transition-all duration-200 placeholder:text-gray-500 focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600"
                   />
-                  {errors.password && (
+                  {errors.phone && (
                     <span className="text-red-600">
-                      {errors.password.message}
+                      {errors.phone.message}
                     </span>
                   )}
                 </div>
