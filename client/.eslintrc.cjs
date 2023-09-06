@@ -24,6 +24,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/no-unescaped-entities': 'off',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true }
