@@ -61,7 +61,6 @@ const { value: envVars, error } = envVarsSchema
 if (error) {
 	throw new Error(`Config validation error: ${error.message}`);
 }
-const ssl = process.env.PG_SSL ? process.env.PG_SSL : undefined;
 
 module.exports = {
 	env: envVars.NODE_ENV,
@@ -85,7 +84,9 @@ module.exports = {
 		database: envVars.SQL_DATABASE_NAME,
 		password: envVars.SQL_PASSWORD,
 		dialect: envVars.SQL_DIALECT,
-		ssl,
+		dialectOptions: {
+			ssl: true,
+		},
 		pool: {
 			max: envVars.SQL_MAX_POOL,
 			min: envVars.SQL_MIN_POOL,
