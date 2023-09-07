@@ -62,6 +62,8 @@ if (error) {
 	throw new Error(`Config validation error: ${error.message}`);
 }
 
+const { DB_URL } = process.env;
+
 module.exports = {
 	env: envVars.NODE_ENV,
 	port: envVars.PORT,
@@ -115,4 +117,5 @@ module.exports = {
 		},
 		from: envVars.EMAIL_FROM,
 	},
+	DB_URL,
 };

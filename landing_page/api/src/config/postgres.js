@@ -5,7 +5,7 @@ const logger = require('./logger');
 let client;
 
 (async function name() {
-	client = new Client(config.sqlDB);
+	client = new Client(config.DB_URL ? config.DB_URL : config.sqlDB);
 	try {
 		await client.connect();
 		logger.info('Connect to postgress sucessfully');
