@@ -61,7 +61,7 @@ const { value: envVars, error } = envVarsSchema
 if (error) {
 	throw new Error(`Config validation error: ${error.message}`);
 }
-const ssl = process.env.PG_SSL ? { rejectUnauthorized: false } : undefined;
+const ssl = process.env.PG_SSL ? process.env.PG_SSL : undefined;
 
 module.exports = {
 	env: envVars.NODE_ENV,
