@@ -1,7 +1,7 @@
 // src/components/BudgetCalculatorView.tsx
 
-import React from 'react';
-import './CalculatorView.css';
+import React from "react";
+import "./CalculatorView.css";
 
 interface CalculatorViewProps {
   income: number | string;
@@ -24,34 +24,37 @@ const CalculatorView: React.FC<CalculatorViewProps> = ({
   onExpenseNameChange,
   onExpenseAmountChange,
   onAddExpense,
-  isEditing
+  isEditing,
 }) => {
   return (
     <div>
       <h2>Income</h2>
-      <input
-        type="number"
-        min={0}
-        value={income as number}
-        onChange={onIncomeChange}
-      />
+      <div>
+        <input
+          type="number"
+          min={0}
+          value={income as number}
+          onChange={onIncomeChange}
+        />
 
-      <h2>Expenses</h2>
-      <input
-        type="text"
-        placeholder="Expense Name"
-        value={expenseName}
-        onChange={onExpenseNameChange}
-      />
-      <input
-        type="number"
-        placeholder="Expense Amount"
-        min={0}
-        value={expenseAmount as string}
-        onChange={onExpenseAmountChange}
-      />
+        <h2>Expenses</h2>
+        <input
+          type="text"
+          placeholder="Expense Name"
+          value={expenseName}
+          onChange={onExpenseNameChange}
+        />
+        <input
+          type="number"
+          placeholder="Expense Amount"
+          min={0}
+          value={expenseAmount as string}
+          onChange={onExpenseAmountChange}
+        />
+      </div>
+
       <button onClick={onAddExpense}>
-        {isEditing ? 'Update Expense' : 'Add Expense'}
+        {isEditing ? "Update Expense" : "Add Expense"}
       </button>
 
       <div className="budget-summary">
