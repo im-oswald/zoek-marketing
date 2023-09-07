@@ -85,9 +85,9 @@ module.exports = {
 		host: envVars.SQL_HOST,
 		database: envVars.SQL_DATABASE_NAME,
 		password: envVars.SQL_PASSWORD,
-		dialect: envVars.SQL_DIALECT,
+		dialect: 'postgres',
 		dialectOptions: {
-			ssl: true,
+			rejectUnauthorized: false,
 		},
 		pool: {
 			max: envVars.SQL_MAX_POOL,
