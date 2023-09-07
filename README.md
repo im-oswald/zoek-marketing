@@ -2,6 +2,8 @@
 
 ## Tasks
 
+### HTML & CSS - [Preview](html_css/Preview.png)
+
 ### Landing Page - [README](landing_page/README.md)
 
 ### Custom Payment API - [README](custom_payment_api/README.md)
