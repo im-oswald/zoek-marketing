@@ -1,4 +1,14 @@
-#
+# Zoek Test Assessment
+
+## Tasks
+
+### Landing Page - [README](landing_page/README.md)
+
+### Custom Payment API - [README](custom_payment_api/README.md)
+
+### Content Library - [README](content_library/README.md)
+
+### Budget Calculator - [README](budget_calculator/README.md)
 
 ## Assumptions
 

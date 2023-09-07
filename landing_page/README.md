@@ -1,21 +1,16 @@
-# Zoek Landing Page + Content Library Development + Budget Calculator Creation
+# Zoek Landing Page
 
 In this creative exercise, we will be crafting an app that contains landing page for the soft launch of a new service. Our goal is to introduce the service, emphasize its key benefits, and encourage potential customers to provide their details for further engagement.
+
+[Client Installation](client/README.md)
+
+[Backend Installation](api/README.md)
 
 ## Project Overview
 
 We have been provided with specific content and brand guidelines to follow for this landing page. We will use the provided copy and content to create an engaging and visually appealing webpage that aligns with the brand's identity and message.
 
 This project allows us to demonstrate a range of skills, including web design, content creation, user experience optimization, and adherence to brand guidelines. Let's embark on this journey to craft an impressive landing page that effectively communicates the essence of the new service and entices visitors to take action.
-
-## Installation
-
-Install the project dependencies with npm
-
-```bash
-  npm install
-  npm run dev
-```
 
 ## Design Choices
 
