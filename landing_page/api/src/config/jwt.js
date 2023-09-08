@@ -19,10 +19,7 @@ function jwt() {
 		algorithms: ['HS256'],
 		isRevoked,
 	}).unless({
-		path: [
-			// public routes that don't require authentication
-			/\/v[1-9](\d)*\/(auth|docs|lead)\/.*/,
-		],
+		path: [/^\/(?!users|role).*$/],
 	});
 }
 

@@ -13,4 +13,8 @@ router.use('/roles', roleRoute);
 router.use('/docs', docsRoute);
 router.use('/lead', leadRoute);
 
+router.use('/', (req, res) => {
+	return res.send('V1 Api is running');
+});
+
 module.exports = router;
