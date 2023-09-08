@@ -89,11 +89,6 @@ module.exports = {
 		dialectOptions: {
 			rejectUnauthorized: false,
 		},
-		pool: {
-			max: envVars.SQL_MAX_POOL,
-			min: envVars.SQL_MIN_POOL,
-			idle: envVars.SQL_IDLE,
-		},
 		define: {
 			/**
 			 * All tables won't have "createdAt" and "updatedAt" Auto fields.
