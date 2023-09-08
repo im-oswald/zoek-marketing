@@ -6,7 +6,6 @@ let client;
 
 (async function name() {
 	client = new Client(config.sqlDB);
-	console.log(client);
 	try {
 		await client.connect();
 		logger.info('Connect to postgress sucessfully');

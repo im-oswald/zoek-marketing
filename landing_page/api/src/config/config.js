@@ -51,6 +51,8 @@ const envVarsSchema = Joi.object()
 		EMAIL_FROM: Joi.string().description(
 			'the from field in the emails sent by the app'
 		),
+		DB_URL: Joi.string().description('DB_URL for connection'),
+		PG_SSL: Joi.string().description('PG_SSL for ssl'),
 	})
 	.unknown();
 
@@ -62,7 +64,8 @@ if (error) {
 	throw new Error(`Config validation error: ${error.message}`);
 }
 
-const { DB_URL } = process.env;
+const { DB_URL, PG_SSL } = envVars;
+const ssl = PG_SSL ? { ssl: true } : undefined;
 
 module.exports = {
 	env: envVars.NODE_ENV,
@@ -88,7 +91,9 @@ module.exports = {
 		dialect: 'postgres',
 		dialectOptions: {
 			rejectUnauthorized: false,
+			...ssl,
 		},
+		...ssl,
 		define: {
 			/**
 			 * All tables won't have "createdAt" and "updatedAt" Auto fields.
